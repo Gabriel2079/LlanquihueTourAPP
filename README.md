@@ -1,4 +1,4 @@
-# Proyecto: Llanq# Proyecto: LlanquihueTourApp
+#Proyecto: LlanquihueTourApp
 
 ## ¿De qué se trata?
 Este es un programa de computador hecho en Java para ayudar a la agencia de viajes "Llanquihue Tour". Sirve para leer una lista de paseos guardada en un bloc de notas (`.txt`), ordenar esa información en la memoria de la computadora y permitir buscar viajes automáticamente (por ejemplo, encontrar rápido solo los paseos de comida). Así, la agencia no tiene que hacer todo a mano y se evitan errores.
