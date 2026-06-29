@@ -51,5 +51,29 @@ public class GestorDatos {
             System.out.println("Error al leer el archivo: " + e.getMessage());
         }
         return listaTours;
+
+        // ... aquí abajo de tus otros métodos de la semana pasada, pegas esto:
+    } // <--- Esta es la última llave que cierra toda la clase GestorDatos
+    public void ejecutarPruebaSemana6() {
+        System.out.println("--- LISTADO DE SERVICIOS TURÍSTICOS (LLANQUIHUE TOUR) ---\n");
+
+        model.RutaGastronomica ruta1 = new model.RutaGastronomica("Sabores de Frutillar", 4, 5);
+        model.RutaGastronomica ruta2 = new model.RutaGastronomica("Circuito Asado Patagónico", 6, 3);
+
+        model.PaseoLacustre paseo1 = new model.PaseoLacustre("Navegación Lago Llanquihue", 2, "Catamarán");
+        model.PaseoLacustre paseo2 = new model.PaseoLacustre("Aventura en Kayak Volcán Osorno", 3, "Kayak Doble");
+
+        model.ExcursionCultural excursion1 = new model.ExcursionCultural("Ruta Colonos Alemanes", 5, "Museo Colonial Alemán");
+        model.ExcursionCultural excursion2 = new model.ExcursionCultural("Vestigios de Puerto Varas", 3, "Iglesia Sagrado Corazón de Jesús");
+
+        System.out.println("[Ruta Gastronómica 1] " + ruta1);
+        System.out.println("[Ruta Gastronómica 2] " + ruta2);
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("[Paseo Lacustre 1]    " + paseo1);
+        System.out.println("[Paseo Lacustre 2]    " + paseo2);
+        System.out.println("-----------------------------------------------------------------");
+        System.out.println("[Excursión Cultural 1] " + excursion1);
+        System.out.println("[Excursión Cultural 2] " + excursion2);
     }
 }
+
