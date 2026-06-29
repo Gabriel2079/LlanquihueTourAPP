@@ -1,23 +1,33 @@
-# Proyecto: LlanquihueTourApp
+# LlanquihueTourApp - Sistema Llanquihue Tour
 
-## ¿De qué se trata?
-Este es un programa de computador hecho en Java para ayudar a la agencia de viajes "Llanquihue Tour". Sirve para leer una lista de paseos guardada en un bloc de notas (`.txt`), ordenar esa información en la memoria de la computadora y permitir buscar viajes automáticamente (por ejemplo, encontrar rápido solo los paseos de comida). Así, la agencia no tiene que hacer todo a mano y se evitan errores.
+##  ¿De qué se trata este proyecto?
+Este proyecto lo armé para digitalizar la forma en que trabaja la agencia de turismo **Llanquihue Tour**. 
 
-## ¿Cómo ordené las carpetas en el proyecto?
-Para que el código no fuera un desorden, separé los archivos en 4 carpetas llamadas "paquetes":
+El sistema hace dos cosas principales:
+1. **Manejo de datos antiguos (Semana 5):** Lee de forma automática un archivo de texto (`tours.txt`) con los viajes disponibles, los organiza según su destino (comuna y región) y tiene un buscador para filtrar rápidamente (por ejemplo, buscar sólo los tours "Gastronómicos").
+2. **Nueva estructura de servicios (Semana 6):** Organiza de manera inteligente los diferentes tipos de actividades que ofrece la agencia (Rutas Gastronómicas, Paseos Lacustres y Excursiones Culturales) usando herencia en Java. Esto permite que compartan datos básicos como el nombre y la duración, pero manteniendo sus detalles únicos (como el número de paradas o el tipo de embarcación).
 
-* **app**: Adentro está `Main.java`, que es el archivo principal que hace arrancar y funcionar todo el sistema.
-* **data**: Adentro está `GestorDatos.java`, que es el archivo que se encarga de abrir y leer el bloc de notas donde están los viajes.
-* **model**: Aquí guardo las plantillas o moldes de los datos:
-    * `Tour.java`: Guarda los datos básicos del viaje (su nombre, qué tipo es, cuánto cuesta y cuánta gente cabe).
-    * `Destino.java`: Guarda el lugar (la comuna y la región). Este archivo lo metí dentro de los datos del tour para que queden conectados (a esto en programación le llamamos composición).
-* **service**: Adentro está `FiltroServicio.java`, que es el archivo que hace el trabajo de buscar y filtrar los viajes para mostrarlos limpios en la pantalla.
+---
 
-## ¿Cómo hacer andar el programa?
-Para probar el sistema en tu computadora, solo sigue estos pasos:
+## Organización del código (Paquetes)
+Para que el proyecto sea ordenado y fácil de entender, dividí el código en estas carpetas:
 
-1. Abre el programa IntelliJ IDEA y carga el proyecto.
-2. Revisa que el archivo de texto `tours.txt` esté metido en la carpeta llamada `resources`.
-3. Ve a la carpeta `src`, busca la carpetita `app` y abre el archivo `Main.java`.
-4. Haz clic en el botón verde de "Play" (Run) que está arriba a la derecha.
-5. El programa va a leer el bloc de notas y te va a mostrar en la pantalla de abajo la lista de todos los viajes y, justo después, te dejará ordenados solo los que dicen "Gastronómico".
+* **`app`:** Es el punto de partida. Aquí está el archivo `Main.java` que ejecuta todo el programa y muestra los resultados en la consola.
+* **`data`:** Aquí está el cerebro de los datos. Contiene `GestorDatos.java` (que abre el archivo de texto) y `GestorServicios.java` (que crea los ejemplos de prueba con los nuevos paseos de esta semana).
+* **`model`:** Aquí guardo las plantillas de los objetos: `Tour`, `Destino`, `ServicioTuristico`, `RutaGastronomica`, `PaseoLacustre` y `ExcursionCultural`.
+* **`service`:** Contiene las herramientas de búsqueda, como el filtro para separar los viajes por su tipo.
+
+---
+
+## ¿Cómo hacerlo funcionar?
+
+### 1. Requisitos
+* Tener Java instalado (JDK 17 o superior).
+* Usar un editor como IntelliJ IDEA.
+
+### 2. El archivo de texto
+Asegúrate de tener la carpeta `resources` y dentro de ella el archivo `tours.txt` separado por puntos y comas (`;`), por ejemplo:
+```text
+Tour Ruta del Curanto;Gastronómico;45000;12;Frutillar;Región de Los Lagos
+Navegación Volcán;Lacustre;35000;20;Puerto Varas;Región de Los Lagos
+Sendero Alerce Andino;Cultural;25000;15;Puerto Montt;Región de Los Lagos
